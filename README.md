@@ -1,5 +1,8 @@
 # aurelia-typescript-atom
+
 An starter kit for working with the Aurelia TypeScript using the Atom IDE
+
+## Overview
 
 This library works with the [Aurelia](http://www.aurelia.io/) platform.
 
