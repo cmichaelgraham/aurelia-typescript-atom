@@ -9,4 +9,4 @@ declare module 'aurelia-skeleton-plugin/index' {
 }
 declare module 'aurelia-skeleton-plugin' {
 	export * from 'aurelia-skeleton-plugin/index';
-	}
+}

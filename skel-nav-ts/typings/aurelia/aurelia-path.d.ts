@@ -6,4 +6,4 @@ declare module 'aurelia-path/index' {
 }
 declare module 'aurelia-path' {
 	export * from 'aurelia-path/index';
-	}
+}

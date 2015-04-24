@@ -1,7 +1,10 @@
+import {Router} from 'aurelia-router';
+
 export class ChildRouter{
   heading = 'Child Router';
+  router:Router;
 
-  configureRouter(config, router){
+  configureRouter(config, router:Router){
     config.map([
       { route: ['','welcome'],  moduleId: './welcome',      nav: true, title:'Welcome' },
       { route: 'flickr',        moduleId: './flickr',       nav: true },

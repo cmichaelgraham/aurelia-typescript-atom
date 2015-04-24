@@ -58,7 +58,7 @@ declare module 'aurelia-templating/behaviors' {
 }
 declare module 'aurelia-templating/attached-behavior' {
 	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating\behavior-instance';
+	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
 	export class AttachedBehavior extends ResourceType {
 	    name: any;
 	    properties: any;
@@ -260,8 +260,8 @@ declare module 'aurelia-templating/view-factory' {
 
 }
 declare module 'aurelia-templating/view-compiler' {
-	import { ViewFactory } from 'aurelia-templating\view-factory';
-	import { BindingLanguage } from 'aurelia-templating\binding-language';
+	import { ViewFactory } from 'aurelia-templating/view-factory';
+	import { BindingLanguage } from 'aurelia-templating/binding-language';
 	export class ViewCompiler {
 	    bindingLanguage: any;
 	    static inject(): typeof BindingLanguage[];
@@ -333,7 +333,7 @@ declare module 'aurelia-templating/view-engine' {
 
 }
 declare module 'aurelia-templating/composition-engine' {
-	import { ViewEngine } from 'aurelia-templating\view-engine';
+	import { ViewEngine } from 'aurelia-templating/view-engine';
 	export class CompositionEngine {
 	    static inject(): typeof ViewEngine[];
 	    viewEngine: any;
@@ -348,7 +348,7 @@ declare module 'aurelia-templating/composition-engine' {
 }
 declare module 'aurelia-templating/custom-element' {
 	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating\behavior-instance';
+	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
 	export class UseShadowDOM {
 	}
 	export class SkipContentProcessing {
@@ -401,25 +401,25 @@ declare module 'aurelia-templating/decorators' {
 
 }
 declare module 'aurelia-templating/index' {
-	export { HtmlBehaviorResource } from 'aurelia-templating\html-behavior';
-	export { BindableProperty } from 'aurelia-templating\bindable-property';
-	export { ResourceRegistry, ViewResources } from 'aurelia-templating\resource-registry';
-	export { ChildObserver } from 'aurelia-templating\children';
-	export { ElementConfigResource } from 'aurelia-templating\element-config';
-	export { ViewStrategy, UseViewStrategy, ConventionalViewStrategy, NoViewStrategy } from 'aurelia-templating\view-strategy';
-	export { ViewCompiler } from 'aurelia-templating\view-compiler';
-	export { ViewEngine } from 'aurelia-templating\view-engine';
-	export { ViewFactory, BoundViewFactory } from 'aurelia-templating\view-factory';
-	export { ViewSlot } from 'aurelia-templating\view-slot';
-	export { BindingLanguage } from 'aurelia-templating\binding-language';
-	export { CompositionEngine } from 'aurelia-templating\composition-engine';
-	export { Animator } from 'aurelia-templating\animator';
-	export * from 'aurelia-templating\decorators';
+	export { HtmlBehaviorResource } from 'aurelia-templating/html-behavior';
+	export { BindableProperty } from 'aurelia-templating/bindable-property';
+	export { ResourceRegistry, ViewResources } from 'aurelia-templating/resource-registry';
+	export { ChildObserver } from 'aurelia-templating/children';
+	export { ElementConfigResource } from 'aurelia-templating/element-config';
+	export { ViewStrategy, UseViewStrategy, ConventionalViewStrategy, NoViewStrategy } from 'aurelia-templating/view-strategy';
+	export { ViewCompiler } from 'aurelia-templating/view-compiler';
+	export { ViewEngine } from 'aurelia-templating/view-engine';
+	export { ViewFactory, BoundViewFactory } from 'aurelia-templating/view-factory';
+	export { ViewSlot } from 'aurelia-templating/view-slot';
+	export { BindingLanguage } from 'aurelia-templating/binding-language';
+	export { CompositionEngine } from 'aurelia-templating/composition-engine';
+	export { Animator } from 'aurelia-templating/animator';
+	export * from 'aurelia-templating/decorators';
 
 }
 declare module 'aurelia-templating/template-controller' {
 	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating\behavior-instance';
+	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
 	export class TemplateController extends ResourceType {
 	    name: any;
 	    properties: any;
@@ -439,4 +439,4 @@ declare module 'aurelia-templating/template-controller' {
 }
 declare module 'aurelia-templating' {
 	export * from 'aurelia-templating/index';
-	}
+}

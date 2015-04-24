@@ -82,7 +82,7 @@ declare module 'aurelia-http-client/transformers' {
 
 }
 declare module 'aurelia-http-client/http-request-message' {
-	import { RequestMessageProcessor } from 'aurelia-http-client\request-message-processor';
+	import { RequestMessageProcessor } from 'aurelia-http-client/request-message-processor';
 	export class HttpRequestMessage {
 	    method: any;
 	    uri: any;
@@ -95,7 +95,7 @@ declare module 'aurelia-http-client/http-request-message' {
 
 }
 declare module 'aurelia-http-client/jsonp-request-message' {
-	import { RequestMessageProcessor } from 'aurelia-http-client\request-message-processor';
+	import { RequestMessageProcessor } from 'aurelia-http-client/request-message-processor';
 	export class JSONPRequestMessage {
 	    method: any;
 	    uri: any;
@@ -140,7 +140,7 @@ declare module 'aurelia-http-client/request-builder' {
 
 }
 declare module 'aurelia-http-client/http-client' {
-	import { RequestBuilder } from 'aurelia-http-client\request-builder';
+	import { RequestBuilder } from 'aurelia-http-client/request-builder';
 	/**
 	* The main HTTP client object.
 	*
@@ -254,14 +254,14 @@ declare module 'aurelia-http-client/index' {
 	 *
 	 * @module HttpClient
 	 */
-	export { HttpClient } from 'aurelia-http-client\http-client';
-	export { HttpRequestMessage } from 'aurelia-http-client\http-request-message';
-	export { HttpResponseMessage, mimeTypes } from 'aurelia-http-client\http-response-message';
-	export { JSONPRequestMessage } from 'aurelia-http-client\jsonp-request-message';
-	export { Headers } from 'aurelia-http-client\headers';
-	export { RequestBuilder } from 'aurelia-http-client\request-builder';
+	export { HttpClient } from 'aurelia-http-client/http-client';
+	export { HttpRequestMessage } from 'aurelia-http-client/http-request-message';
+	export { HttpResponseMessage, mimeTypes } from 'aurelia-http-client/http-response-message';
+	export { JSONPRequestMessage } from 'aurelia-http-client/jsonp-request-message';
+	export { Headers } from 'aurelia-http-client/headers';
+	export { RequestBuilder } from 'aurelia-http-client/request-builder';
 
 }
 declare module 'aurelia-http-client' {
 	export * from 'aurelia-http-client/index';
-	}
+}

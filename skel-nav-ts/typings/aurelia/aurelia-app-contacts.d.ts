@@ -69,6 +69,3 @@ declare module 'aurelia-app-contacts/no-selection' {
 	}
 
 }
-declare module 'aurelia-app-contacts' {
-	export * from 'aurelia-app-contacts/index';
-	}

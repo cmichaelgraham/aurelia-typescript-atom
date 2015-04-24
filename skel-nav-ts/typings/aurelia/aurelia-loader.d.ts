@@ -34,10 +34,10 @@ declare module 'aurelia-loader/loader' {
 
 }
 declare module 'aurelia-loader/index' {
-	export { TemplateRegistryEntry, TemplateDependency } from 'aurelia-loader\template-registry-entry';
-	export { Loader } from 'aurelia-loader\loader';
+	export { TemplateRegistryEntry, TemplateDependency } from 'aurelia-loader/template-registry-entry';
+	export { Loader } from 'aurelia-loader/loader';
 
 }
 declare module 'aurelia-loader' {
 	export * from 'aurelia-loader/index';
-	}
+}

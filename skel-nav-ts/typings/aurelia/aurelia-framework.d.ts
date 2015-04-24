@@ -112,7 +112,7 @@ declare module 'aurelia-framework/index' {
 	 *
 	 * @module framework
 	 */
-	export { Aurelia } from 'aurelia-framework\aurelia';
+	export { Aurelia } from 'aurelia-framework/aurelia';
 	export * from 'aurelia-dependency-injection';
 	export * from 'aurelia-binding';
 	export * from 'aurelia-metadata';
@@ -124,4 +124,4 @@ declare module 'aurelia-framework/index' {
 }
 declare module 'aurelia-framework' {
 	export * from 'aurelia-framework/index';
-	}
+}

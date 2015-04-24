@@ -10,4 +10,4 @@ declare module 'aurelia-logging-console/index' {
 }
 declare module 'aurelia-logging-console' {
 	export * from 'aurelia-logging-console/index';
-	}
+}

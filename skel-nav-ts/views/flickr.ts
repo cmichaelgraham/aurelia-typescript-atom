@@ -6,8 +6,8 @@ export class Flickr{
   heading = 'Flickr';
   images = [];
   url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json';
-
-  constructor(http){
+  http:HttpClient;
+  constructor(http:HttpClient){
     this.http = http;
   }
 

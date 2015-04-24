@@ -20,4 +20,4 @@ declare module 'aurelia-route-recognizer/index' {
 }
 declare module 'aurelia-route-recognizer' {
 	export * from 'aurelia-route-recognizer/index';
-	}
+}

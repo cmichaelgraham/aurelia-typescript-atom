@@ -30,4 +30,4 @@ declare module 'aurelia-history-browser/index' {
 }
 declare module 'aurelia-history-browser' {
 	export * from 'aurelia-history-browser/index';
-	}
+}

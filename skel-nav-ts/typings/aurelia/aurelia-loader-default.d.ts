@@ -11,4 +11,4 @@ declare module 'aurelia-loader-default/index' {
 }
 declare module 'aurelia-loader-default' {
 	export * from 'aurelia-loader-default/index';
-	}
+}

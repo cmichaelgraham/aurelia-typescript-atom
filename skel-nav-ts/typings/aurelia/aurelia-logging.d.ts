@@ -101,4 +101,4 @@ declare module 'aurelia-logging/index' {
 }
 declare module 'aurelia-logging' {
 	export * from 'aurelia-logging/index';
-	}
+}

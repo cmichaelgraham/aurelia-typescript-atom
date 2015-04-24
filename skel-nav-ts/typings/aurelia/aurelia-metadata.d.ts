@@ -158,12 +158,12 @@ declare module 'aurelia-metadata/index' {
 	 *
 	 * @module metadata
 	 */
-	export { Origin } from 'aurelia-metadata\origin';
-	export { ResourceType } from 'aurelia-metadata\resource-type';
-	export { Metadata } from 'aurelia-metadata\metadata';
-	export { Decorators } from 'aurelia-metadata\decorators';
+	export { Origin } from 'aurelia-metadata/origin';
+	export { ResourceType } from 'aurelia-metadata/resource-type';
+	export { Metadata } from 'aurelia-metadata/metadata';
+	export { Decorators } from 'aurelia-metadata/decorators';
 
 }
 declare module 'aurelia-metadata' {
 	export * from 'aurelia-metadata/index';
-	}
+}

@@ -345,8 +345,8 @@ declare module 'aurelia-dependency-injection/container' {
 
 }
 declare module 'aurelia-dependency-injection/index' {
-	export { Registration, TransientRegistration, SingletonRegistration, Resolver, Lazy, All, Optional, Parent, InstanceActivator, FactoryActivator } from 'aurelia-dependency-injection\metadata';
-	export { Container } from 'aurelia-dependency-injection\container';
+	export { Registration, TransientRegistration, SingletonRegistration, Resolver, Lazy, All, Optional, Parent, InstanceActivator, FactoryActivator } from 'aurelia-dependency-injection/metadata';
+	export { Container } from 'aurelia-dependency-injection/container';
 	export function inject(...rest: any[]): (target: any) => void;
 	export function transient(key: any): (target: any) => void;
 	export function singleton(keyOrRegisterInChild: any, registerInChild?: boolean): (target: any) => void;
@@ -355,4 +355,4 @@ declare module 'aurelia-dependency-injection/index' {
 }
 declare module 'aurelia-dependency-injection' {
 	export * from 'aurelia-dependency-injection/index';
-	}
+}

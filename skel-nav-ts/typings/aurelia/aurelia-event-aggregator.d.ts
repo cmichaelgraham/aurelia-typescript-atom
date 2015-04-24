@@ -13,4 +13,4 @@ declare module 'aurelia-event-aggregator/index' {
 }
 declare module 'aurelia-event-aggregator' {
 	export * from 'aurelia-event-aggregator/index';
-	}
+}

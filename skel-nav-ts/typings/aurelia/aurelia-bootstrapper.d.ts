@@ -4,4 +4,4 @@ declare module 'aurelia-bootstrapper/index' {
 }
 declare module 'aurelia-bootstrapper' {
 	export * from 'aurelia-bootstrapper/index';
-	}
+}

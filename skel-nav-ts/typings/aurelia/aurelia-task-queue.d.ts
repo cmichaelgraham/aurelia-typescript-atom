@@ -16,4 +16,4 @@ declare module 'aurelia-task-queue/index' {
 }
 declare module 'aurelia-task-queue' {
 	export * from 'aurelia-task-queue/index';
-	}
+}

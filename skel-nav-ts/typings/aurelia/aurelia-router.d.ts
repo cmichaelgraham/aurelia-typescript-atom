@@ -146,7 +146,7 @@ declare module 'aurelia-router/router-configuration' {
 
 }
 declare module 'aurelia-router/router' {
-	import { NavigationContext } from 'aurelia-router\navigation-context';
+	import { NavigationContext } from 'aurelia-router/navigation-context';
 	export class Router {
 	    container: any;
 	    history: any;
@@ -208,7 +208,7 @@ declare module 'aurelia-router/route-loading' {
 
 }
 declare module 'aurelia-router/pipeline-provider' {
-	import { Pipeline } from 'aurelia-router\pipeline';
+	import { Pipeline } from 'aurelia-router/pipeline';
 	export class PipelineProvider {
 	    static inject(): any[];
 	    container: any;
@@ -219,7 +219,7 @@ declare module 'aurelia-router/pipeline-provider' {
 
 }
 declare module 'aurelia-router/app-router' {
-	import { Router } from 'aurelia-router\router';
+	import { Router } from 'aurelia-router/router';
 	export class AppRouter extends Router {
 	    static inject(): any[];
 	    pipelineProvider: any;
@@ -243,14 +243,14 @@ declare module 'aurelia-router/app-router' {
 
 }
 declare module 'aurelia-router/index' {
-	export { Router } from 'aurelia-router\router';
-	export { AppRouter } from 'aurelia-router\app-router';
-	export { PipelineProvider } from 'aurelia-router\pipeline-provider';
-	export { Redirect } from 'aurelia-router\navigation-commands';
-	export { RouteLoader } from 'aurelia-router\route-loading';
-	export { RouterConfiguration } from 'aurelia-router\router-configuration';
-	export { NO_CHANGE, INVOKE_LIFECYCLE, REPLACE } from 'aurelia-router\navigation-plan';
-	export { RouteFilterContainer, createRouteFilterStep } from 'aurelia-router\route-filters';
+	export { Router } from 'aurelia-router/router';
+	export { AppRouter } from 'aurelia-router/app-router';
+	export { PipelineProvider } from 'aurelia-router/pipeline-provider';
+	export { Redirect } from 'aurelia-router/navigation-commands';
+	export { RouteLoader } from 'aurelia-router/route-loading';
+	export { RouterConfiguration } from 'aurelia-router/router-configuration';
+	export { NO_CHANGE, INVOKE_LIFECYCLE, REPLACE } from 'aurelia-router/navigation-plan';
+	export { RouteFilterContainer, createRouteFilterStep } from 'aurelia-router/route-filters';
 
 }
 declare module 'aurelia-router/model-binding' {
@@ -261,4 +261,4 @@ declare module 'aurelia-router/model-binding' {
 }
 declare module 'aurelia-router' {
 	export * from 'aurelia-router/index';
-	}
+}

@@ -9,4 +9,4 @@ declare module 'aurelia-history/index' {
 }
 declare module 'aurelia-history' {
 	export * from 'aurelia-history/index';
-	}
+}
