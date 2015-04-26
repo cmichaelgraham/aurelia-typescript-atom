@@ -172,3 +172,7 @@ section.au-enter-active {
     color: #000000;
     background-color: #EAF2D3;
 }
+
+.fill-vertical { 
+    height: 100%;
+}
