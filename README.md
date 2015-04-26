@@ -1,4 +1,4 @@
-# aurelia-typescript-atom
+# [aurelia-typescript-atom](https://github.com/cmichaelgraham/aurelia-typescript-atom)
 
 An starter kit for working with the Aurelia TypeScript using the Atom IDE
 
