@@ -1,16 +1,9 @@
-import {LogManager} from 'aurelia-framework';
-import {ConsoleAppender} from 'aurelia-logging-console';
+import {Aurelia} from 'aurelia-framework';
 
-LogManager.addAppender(new ConsoleAppender());
-LogManager.setLevel(LogManager.levels.debug);
-
-export function configure(aurelia) {
+export function configure(aurelia: Aurelia) {
   aurelia.use
-    .defaultBindingLanguage()
-    .defaultResources()
-    .router()
-    .eventAggregator();
-    // .plugin('./path/to/plugin');
+    .standardConfiguration()
+    .developmentLogging();
 
-  aurelia.start().then(a => a.setRoot('views/app', document.body));
+  aurelia.start().then(a => a.setRoot());
 }
