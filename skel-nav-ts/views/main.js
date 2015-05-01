@@ -3,7 +3,7 @@ define(["require", "exports"], function (require, exports) {
         aurelia.use
             .standardConfiguration()
             .developmentLogging();
-        aurelia.start().then(function (a) { return a.setRoot(); });
+        aurelia.start().then(function (a) { return a.setRoot('views/app'); });
     }
     exports.configure = configure;
 });

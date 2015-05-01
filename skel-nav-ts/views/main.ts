@@ -1,9 +1,7 @@
-import {Aurelia} from 'aurelia-framework';
-
-export function configure(aurelia: Aurelia) {
+export function configure(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging();
 
-  aurelia.start().then(a => a.setRoot());
+  aurelia.start().then(a => a.setRoot('views/app'));
 }
