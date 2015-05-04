@@ -1,6 +1,30 @@
+declare module 'aurelia-binding/access-keyed-observer' {
+	export class AccessKeyedObserver {
+	    objectInfo: any;
+	    keyInfo: any;
+	    evaluate: any;
+	    observerLocator: any;
+	    disposeKey: any;
+	    disposeObject: any;
+	    disposeProperty: any;
+	    callback: any;
+	    constructor(objectInfo: any, keyInfo: any, observerLocator: any, evaluate: any);
+	    updatePropertySubscription(object: any, key: any): void;
+	    objectOrKeyChanged(object: any, key?: any): void;
+	    subscribe(callback: any): () => void;
+	    notify(): void;
+	    dispose(): void;
+	}
+
+}
 declare module 'aurelia-binding/array-change-records' {
 	export function calcSplices(current: any, currentStart: any, currentEnd: any, old: any, oldStart: any, oldEnd: any): any;
 	export function projectArraySplices(array: any, changeRecords: any): any[];
+
+}
+declare module 'aurelia-binding/environment' {
+	export var hasObjectObserve: boolean;
+	export var hasArrayObserve: boolean;
 
 }
 declare module 'aurelia-binding/map-change-records' {
@@ -22,7 +46,7 @@ declare module 'aurelia-binding/collection-observation' {
 	    subscribe(callback: any): () => void;
 	    addChangeRecord(changeRecord: any): void;
 	    reset(oldCollection: any): void;
-	    getObserver(propertyName: any): any;
+	    getLengthObserver(): any;
 	    call(): void;
 	}
 	export class CollectionLengthObserver {
@@ -70,6 +94,7 @@ declare module 'aurelia-binding/composite-observer' {
 
 }
 declare module 'aurelia-binding/ast' {
+	import { AccessKeyedObserver } from 'aurelia-binding/access-keyed-observer';
 	export class Expression {
 	    isChain: any;
 	    isAssignable: any;
@@ -155,7 +180,7 @@ declare module 'aurelia-binding/ast' {
 	    accept(visitor: any): void;
 	    connect(binding: any, scope: any): {
 	        value: any;
-	        observer: any;
+	        observer: AccessKeyedObserver;
 	    };
 	}
 	export class CallScope extends Expression {
@@ -280,9 +305,11 @@ declare module 'aurelia-binding/ast' {
 
 }
 declare module 'aurelia-binding/binding-modes' {
-	export var ONE_WAY: number;
-	export var TWO_WAY: number;
-	export var ONE_TIME: number;
+	export const bindingMode: {
+	    oneTime: number;
+	    oneWay: number;
+	    twoWay: number;
+	};
 
 }
 declare module 'aurelia-binding/binding-expression' {
@@ -461,11 +488,10 @@ declare module 'aurelia-binding/event-manager' {
 
 }
 declare module 'aurelia-binding/value-converter' {
-	import { ResourceType } from 'aurelia-metadata';
-	export class ValueConverterResource extends ResourceType {
+	export class ValueConverterResource {
 	    name: any;
 	    instance: any;
-	    constructor(name: any);
+	    constructor(name?: any);
 	    static convention(name: any): ValueConverterResource;
 	    analyze(container: any, target: any): void;
 	    register(registry: any, name: any): void;
@@ -659,7 +685,7 @@ declare module 'aurelia-binding/index' {
 	export { DirtyChecker } from 'aurelia-binding/dirty-checking';
 	export { getChangeRecords } from 'aurelia-binding/map-change-records';
 	export { ComputedPropertyObserver, declarePropertyDependencies } from 'aurelia-binding/computed-observation';
-	export function valueConverter(name: any): (target: any) => any;
+	export function valueConverter(nameOrTarget: any): (target: any) => void;
 	export function computedFrom(...rest: any[]): (target: any, key: any, descriptor: any) => any;
 
 }

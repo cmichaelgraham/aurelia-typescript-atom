@@ -8,7 +8,7 @@ declare module 'aurelia-event-aggregator/index' {
 	    subscribeOnce(event: any, callback: any): () => void;
 	}
 	export function includeEventsIn(obj: any): EventAggregator;
-	export function install(aurelia: any): void;
+	export function configure(aurelia: any): void;
 
 }
 declare module 'aurelia-event-aggregator' {

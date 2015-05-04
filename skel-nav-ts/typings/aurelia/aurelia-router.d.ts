@@ -37,9 +37,11 @@ declare module 'aurelia-router/navigation-commands' {
 
 }
 declare module 'aurelia-router/navigation-plan' {
-	export var NO_CHANGE: string;
-	export var INVOKE_LIFECYCLE: string;
-	export var REPLACE: string;
+	export const activationStrategy: {
+	    noChange: string;
+	    invokeLifecycle: string;
+	    replace: string;
+	};
 	export function buildNavigationPlan(navigationContext: any, forceLifecycleMinimum?: any): Promise<{}>;
 	export class BuildNavigationPlanStep {
 	    run(navigationContext: any, next: any): any;
@@ -167,12 +169,14 @@ declare module 'aurelia-router/router' {
 	    refreshBaseUrl(): void;
 	    refreshNavigation(): void;
 	    configure(callbackOrConfig: any): Router;
+	    createRootedPath(fragment: any): any;
 	    navigate(fragment: any, options: any): any;
+	    navigateToRoute(route: any, params: any, options: any): any;
 	    navigateBack(): void;
 	    createChild(container: any): Router;
-	    createNavigationInstruction(url?: string, parentInstruction?: any): any;
+	    createNavigationInstruction(url?: string, parentInstruction?: any): Promise<any>;
 	    createNavigationContext(instruction: any): NavigationContext;
-	    generate(name: any, params: any, options: any): any;
+	    generate(name: any, params: any): any;
 	    addRoute(config: any, navModel?: any): void;
 	    hasRoute(name: any): boolean;
 	    hasOwnRoute(name: any): any;
@@ -182,10 +186,12 @@ declare module 'aurelia-router/router' {
 
 }
 declare module 'aurelia-router/pipeline' {
-	export var COMPLETED: string;
-	export var CANCELLED: string;
-	export var REJECTED: string;
-	export var RUNNING: string;
+	export const pipelineStatus: {
+	    completed: string;
+	    cancelled: string;
+	    rejected: string;
+	    running: string;
+	};
 	export class Pipeline {
 	    steps: any;
 	    constructor();
@@ -204,7 +210,7 @@ declare module 'aurelia-router/route-loading' {
 	    constructor(routeLoader: any);
 	    run(navigationContext: any, next: any): Promise<{}>;
 	}
-	export function loadNewRoute(routers: any, routeLoader: any, navigationContext: any): Promise<{}[]>;
+	export function loadNewRoute(routeLoader: any, navigationContext: any): Promise<{}[]>;
 
 }
 declare module 'aurelia-router/pipeline-provider' {
@@ -235,7 +241,7 @@ declare module 'aurelia-router/app-router' {
 	    loadUrl(url: any): any;
 	    queueInstruction(instruction: any): Promise<{}>;
 	    dequeueInstruction(): void;
-	    registerViewPort(viewPort: any, name: any): any;
+	    registerViewPort(viewPort: any, name: any): Promise<void>;
 	    activate(options?: any): void;
 	    deactivate(): void;
 	    reset(): void;
@@ -249,14 +255,8 @@ declare module 'aurelia-router/index' {
 	export { Redirect } from 'aurelia-router/navigation-commands';
 	export { RouteLoader } from 'aurelia-router/route-loading';
 	export { RouterConfiguration } from 'aurelia-router/router-configuration';
-	export { NO_CHANGE, INVOKE_LIFECYCLE, REPLACE } from 'aurelia-router/navigation-plan';
+	export { activationStrategy } from 'aurelia-router/navigation-plan';
 	export { RouteFilterContainer, createRouteFilterStep } from 'aurelia-router/route-filters';
-
-}
-declare module 'aurelia-router/model-binding' {
-	export class ApplyModelBindersStep {
-	    run(navigationContext: any, next: any): any;
-	}
 
 }
 declare module 'aurelia-router' {

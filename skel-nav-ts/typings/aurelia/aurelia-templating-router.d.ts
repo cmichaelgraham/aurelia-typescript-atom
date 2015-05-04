@@ -15,18 +15,31 @@ declare module 'aurelia-templating-router/router-view' {
 	    router: any;
 	    view: any;
 	    constructor(element: any, container: any, viewSlot: any, router: any);
+	    bind(executionContext: any): void;
 	    process(viewPortInstruction: any, waitToSwap: any): any;
 	    swap(viewPortInstruction: any): void;
 	}
 
 }
-declare module 'aurelia-templating-router/index' {
-	import {Router, AppRouter, RouteLoader} from 'aurelia-router';
-	import {TemplatingRouteLoader} from 'aurelia-templating-router/route-loader';
-	import {RouterView} from 'aurelia-templating-router/router-view';
+declare module 'aurelia-templating-router/route-href' {
+	export class RouteHref {
+	    router: any;
+	    element: any;
+	    route: any;
+	    params: any;
+	    attribute: any;
+	    constructor(router: any, element: any);
+	    bind(): void;
+	    attributeChanged(value: any, previous: any): void;
+	    processChange(): void;
+	}
 
-	 function install(aurelia: any): void;
-	export { TemplatingRouteLoader, RouterView, install };
+}
+declare module 'aurelia-templating-router/index' {
+	export function configure(aurelia: any): void;
+	export { TemplatingRouteLoader } from 'aurelia-templating-router/route-loader';
+	export { RouterView } from 'aurelia-templating-router/router-view';
+	export { RouteHref } from 'aurelia-templating-router/route-href';
 
 }
 declare module 'aurelia-templating-router' {

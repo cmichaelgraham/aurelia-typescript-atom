@@ -1,23 +1,25 @@
+declare module 'aurelia-skeleton-navigation/animation-main' {
+	export function configure(aurelia: any): void;
+
+}
 declare module 'aurelia-skeleton-navigation/app' {
+	import { Router } from 'aurelia-router';
 	export class App {
-	    static inject(): any[];
-	    router: any;
-	    constructor(router: any);
+	    router: Router;
+	    configureRouter(config: any, router: any): void;
 	}
 
 }
 declare module 'aurelia-skeleton-navigation/child-router' {
+	import { Router } from 'aurelia-router';
 	export class ChildRouter {
-	    static inject(): any[];
-	    heading: string;
-	    router: any;
-	    constructor(router: any);
+	    router: Router;
+	    configureRouter(config: any, router: any): void;
 	}
 
 }
 declare module 'aurelia-skeleton-navigation/flickr' {
 	export class Flickr {
-	    static inject(): any[];
 	    heading: string;
 	    images: any[];
 	    http: any;

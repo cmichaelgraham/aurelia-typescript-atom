@@ -1,6 +1,6 @@
 declare module 'aurelia-framework/plugins' {
 	/**
-	 * Manages loading and installing plugins.
+	 * Manages loading and configuring plugins.
 	 *
 	 * @class Plugins
 	 * @constructor
@@ -12,21 +12,14 @@ declare module 'aurelia-framework/plugins' {
 	    processed: any;
 	    constructor(aurelia: any);
 	    /**
-	     * Installs a plugin before Aurelia starts.
+	     * Configures a plugin before Aurelia starts.
 	     *
 	     * @method plugin
-	     * @param {moduleId} moduleId The ID of the module to install.
+	     * @param {moduleId} moduleId The ID of the module to configure.
 	     * @param {config} config The configuration for the specified module.
 	     * @return {Plugins} Returns the current Plugins instance.
 	   */
 	    plugin(moduleId: any, config: any): Plugins;
-	    /**
-	     * Installs special support for ES5 authoring.
-	     *
-	     * @method es5
-	     * @return {Plugins} Returns the current Plugins instance.
-	   */
-	    es5(): Plugins;
 	    _process(): any;
 	}
 

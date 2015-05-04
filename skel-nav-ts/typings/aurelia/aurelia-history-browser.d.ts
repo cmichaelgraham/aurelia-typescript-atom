@@ -25,7 +25,7 @@ declare module 'aurelia-history-browser/index' {
 	    navigate(fragment?: any, options?: any): any;
 	    navigateBack(): void;
 	}
-	export function install(aurelia: any): void;
+	export function configure(aurelia: any): void;
 
 }
 declare module 'aurelia-history-browser' {

@@ -26,54 +26,8 @@ declare module 'aurelia-templating/behavior-instance' {
 	}
 
 }
-declare module 'aurelia-templating/children' {
-	export class ChildObserver {
-	    selector: any;
-	    changeHandler: any;
-	    property: any;
-	    constructor(property: any, changeHandler: any, selector: any);
-	    createBinding(target: any, behavior: any): ChildObserverBinder;
-	}
-	export class ChildObserverBinder {
-	    selector: any;
-	    target: any;
-	    property: any;
-	    behavior: any;
-	    changeHandler: any;
-	    observer: any;
-	    constructor(selector: any, target: any, property: any, behavior: any, changeHandler: any);
-	    bind(source: any): void;
-	    unbind(): void;
-	    onChange(mutations: any): void;
-	}
-
-}
 declare module 'aurelia-templating/util' {
 	export function hyphenate(name: any): any;
-
-}
-declare module 'aurelia-templating/behaviors' {
-	export function configureBehavior(container: any, behavior: any, target: any, valuePropertyName?: any): void;
-
-}
-declare module 'aurelia-templating/attached-behavior' {
-	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
-	export class AttachedBehavior extends ResourceType {
-	    name: any;
-	    properties: any;
-	    attributes: any;
-	    target: any;
-	    apiName: any;
-	    childExpression: any;
-	    constructor(attribute: any);
-	    static convention(name: any): AttachedBehavior;
-	    analyze(container: any, target: any): void;
-	    load(container: any, target: any): Promise<AttachedBehavior>;
-	    register(registry: any, name: any): void;
-	    compile(compiler: any, resources: any, node: any, instruction: any): any;
-	    create(container: any, instruction: any, element: any, bindings: any): BehaviorInstance;
-	}
 
 }
 declare module 'aurelia-templating/bindable-property' {
@@ -103,10 +57,32 @@ declare module 'aurelia-templating/binding-language' {
 	}
 
 }
+declare module 'aurelia-templating/children' {
+	export class ChildObserver {
+	    selector: any;
+	    changeHandler: any;
+	    property: any;
+	    constructor(property: any, changeHandler: any, selector: any);
+	    createBinding(target: any, behavior: any): ChildObserverBinder;
+	}
+	export class ChildObserverBinder {
+	    selector: any;
+	    target: any;
+	    property: any;
+	    behavior: any;
+	    changeHandler: any;
+	    observer: any;
+	    constructor(selector: any, target: any, property: any, behavior: any, changeHandler: any);
+	    bind(source: any): void;
+	    unbind(): void;
+	    onChange(mutations: any): void;
+	}
+
+}
 declare module 'aurelia-templating/view-strategy' {
 	export class ViewStrategy {
+	    static metadataKey: string;
 	    makeRelativeTo(baseUrl: any): void;
-	    loadViewFactory(viewEngine: any, options: any): void;
 	    static normalize(value: any): any;
 	    static getDefault(target: any): any;
 	}
@@ -273,8 +249,7 @@ declare module 'aurelia-templating/view-compiler' {
 
 }
 declare module 'aurelia-templating/html-behavior' {
-	import { ResourceType } from 'aurelia-metadata';
-	export class HtmlBehaviorResource extends ResourceType {
+	export class HtmlBehaviorResource {
 	    elementName: any;
 	    attributeName: any;
 	    liftsContent: any;
@@ -346,40 +321,8 @@ declare module 'aurelia-templating/composition-engine' {
 	}
 
 }
-declare module 'aurelia-templating/custom-element' {
-	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
-	export class UseShadowDOM {
-	}
-	export class SkipContentProcessing {
-	}
-	export class CustomElement extends ResourceType {
-	    name: any;
-	    properties: any;
-	    attributes: any;
-	    targetShadowDOM: any;
-	    skipContentProcessing: any;
-	    usesShadowDOM: any;
-	    viewStrategy: any;
-	    moduleId: any;
-	    viewFactory: any;
-	    apiName: any;
-	    contentFactory: any;
-	    childExpression: any;
-	    target: any;
-	    constructor(tagName?: any);
-	    static convention(name: any): CustomElement;
-	    analyze(container: any, target: any): void;
-	    register(registry: any, name: any): void;
-	    load(container: any, target: any, viewStrategy?: any, transientView?: any): any;
-	    compile(compiler: any, resources: any, node: any, instruction: any): any;
-	    create(container: any, instruction?: any, element?: any): BehaviorInstance;
-	}
-
-}
 declare module 'aurelia-templating/element-config' {
-	import { ResourceType } from 'aurelia-metadata';
-	export class ElementConfigResource extends ResourceType {
+	export class ElementConfigResource {
 	    load(container: any, target: any): Promise<ElementConfigResource>;
 	    register(): void;
 	}
@@ -395,6 +338,7 @@ declare module 'aurelia-templating/decorators' {
 	export function syncChildren(property: any, changeHandler: any, selector: any): (target: any) => void;
 	export function useShadowDOM(target: any): void | ((target: any) => void);
 	export function skipContentProcessing(target: any): void | ((target: any) => void);
+	export function viewStrategy(strategy: any): (target: any) => void;
 	export function useView(path: any): (target: any) => void;
 	export function noView(target?: any): any;
 	export function elementConfig(target: any): void | ((target: any) => void);
@@ -415,26 +359,6 @@ declare module 'aurelia-templating/index' {
 	export { CompositionEngine } from 'aurelia-templating/composition-engine';
 	export { Animator } from 'aurelia-templating/animator';
 	export * from 'aurelia-templating/decorators';
-
-}
-declare module 'aurelia-templating/template-controller' {
-	import { ResourceType } from 'aurelia-metadata';
-	import { BehaviorInstance } from 'aurelia-templating/behavior-instance';
-	export class TemplateController extends ResourceType {
-	    name: any;
-	    properties: any;
-	    attributes: any;
-	    liftsContent: any;
-	    apiName: any;
-	    target: any;
-	    constructor(attribute: any);
-	    static convention(name: any): TemplateController;
-	    analyze(container: any, target: any): void;
-	    load(container: any, target: any): Promise<TemplateController>;
-	    register(registry: any, name: any): void;
-	    compile(compiler: any, resources: any, node: any, instruction: any, parentNode: any): any;
-	    create(container: any, instruction: any, element: any): BehaviorInstance;
-	}
 
 }
 declare module 'aurelia-templating' {
