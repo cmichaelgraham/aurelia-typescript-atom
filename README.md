@@ -6,8 +6,6 @@ An starter kit for working with the Aurelia TypeScript using the Atom IDE
 
 This library works with the [Aurelia](http://www.aurelia.io/) platform.
 
-It contains a [folder](https://github.com/cmichaelgraham/aurelia-typescript-atom/blob/master/aurelia-dts) of Aurelia type definitions in each sample
-
 ## sample: skel-nav-ts
 
 This sample shows: 
@@ -18,7 +16,15 @@ This sample shows:
 * the Aurelia AMD Bundle, and 
 * the dojo requirejs AMD module loader.
 
-At present, only the `latest` version is working.
+## steps to get going
+
+1. Install Node
+2. Install Gulp
+3. Install Atom
+2. Install Atom-TypeScript
+3. Clone This Repository (or pull the zip)
+4. Open Atom IDE, Open Folder `skel-nav-ts` under the folder you created in the previous step
+5. 
 
 ## Links
 
