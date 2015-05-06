@@ -24,19 +24,19 @@
 }
 ```
 
-### target
+#### target
 
-### module
+#### module
 
-### declaration
+#### declaration
 
-### noImplicitAny
+#### noImplicitAny
 
-### removeComments
+#### removeComments
 
-### noLib
+#### noLib
 
-### emitDecoratorMetadata
+#### emitDecoratorMetadata
 
-### filesGlob
+#### filesGlob
 
