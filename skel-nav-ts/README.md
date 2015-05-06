@@ -24,6 +24,8 @@
 }
 ```
 
+#### version
+
 #### target
 
 #### module
