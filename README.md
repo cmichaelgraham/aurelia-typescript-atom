@@ -19,14 +19,14 @@ This sample shows:
 ## steps to get going
 
 1. Install Node
-2. Install Gulp
+2. run `npm install` (in git bash shell)
 3. Install Atom
 2. Install Atom-TypeScript
 3. Clone This Repository (or pull the zip)
 4. Open Atom IDE, Open Folder `skel-nav-ts` under the folder you created in the previous step
 5. Open Views/main.ts
 6. Use <F6> key to build `.ts` files
-7. run `gulp watch`
+7. run `gulp watch` (in git bash shell)
 8. open Chrome
 9. visit `localhost:9000` (or whatever port `gulp watch` reported)
 
