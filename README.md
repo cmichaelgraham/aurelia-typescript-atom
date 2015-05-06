@@ -28,7 +28,7 @@ This sample shows:
   6. Use &lt;F6&gt; key to build `.ts` files
 7. run `gulp watch` (in git bash shell)
 8. open Chrome
-9. visit `localhost:9000` (or whatever port `gulp watch` reported)
+  9. visit `localhost:9000` (or whatever port `gulp watch` reported)
 
 ## Links
 
