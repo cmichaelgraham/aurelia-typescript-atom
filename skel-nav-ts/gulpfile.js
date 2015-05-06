@@ -32,7 +32,7 @@ var path = {
   style: "styles/**/*.css"
 }
 
-gulp.task('serve', ['build-ts'], function(done) {
+gulp.task('serve', function(done) {
   browserSync({
     open: false,
     port: 9000,
