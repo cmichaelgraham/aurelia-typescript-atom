@@ -1,5 +1,11 @@
 # Atom IDE Sample: Aurelia / TypeScript / ESRI Map
 
+## Description
+
+For our sample, we'll choose to use an existing AMD bundle of the Aurelia libraries and the Dojo AMD loader, so we can easily include an [ESRI map](https://developers.arcgis.com/javascript/) in our sample application.
+
+We will use the [Atom IDE](https://atom.io/) and [Atom-TypeScript package](https://github.com/TypeStrong/atom-typescript#atom-typescript) to build the source TypeScript code, and we will use [Gulp](http://gulpjs.com/) and [Node](https://nodejs.org/) to serve the website.
+
 ## tsconfig.json
 
 ```javascript
