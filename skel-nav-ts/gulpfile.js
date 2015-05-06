@@ -28,6 +28,7 @@ gulp.task('build-ts', function () {
 
 var path = {
   sourceTS: "views/**/*.ts",
+  sourceJS: "views/**/*.js",
   html: "views/**/*.html",
   style: "styles/**/*.css"
 }
@@ -51,7 +52,7 @@ function reportChange(event){
 }
 
 gulp.task('watch', ['serve'], function() {
-  gulp.watch(path.sourceTS, ['build-ts', browserSync.reload]).on('change', reportChange);
+  gulp.watch(path.sourceTS, [browserSync.reload]).on('change', reportChange);
   gulp.watch(path.html, [browserSync.reload]).on('change', reportChange);
   gulp.watch(path.style, [browserSync.reload]).on('change', reportChange);
 });
