@@ -1,5 +1,7 @@
 # [aurelia-typescript-atom](https://github.com/cmichaelgraham/aurelia-typescript-atom)
 
+[![Join the chat at https://gitter.im/cmichaelgraham/aurelia-typescript-atom](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cmichaelgraham/aurelia-typescript-atom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 An starter kit for working with the Aurelia TypeScript using the Atom IDE
 
 ## Overview
