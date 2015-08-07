@@ -10,7 +10,7 @@ We will use the [Atom IDE](https://atom.io/) and [Atom-TypeScript package](https
 
 ```javascript
 {
-    "version": "1.5.1",
+    "version": "1.5.3",
     "compilerOptions": {
         "target": "es5",
         "module": "amd",
