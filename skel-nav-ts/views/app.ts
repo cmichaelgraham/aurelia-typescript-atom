@@ -11,7 +11,7 @@ export class App {
       { route: 'esri-map',        moduleId: './esri-map',       nav: true, title:'ESRI Map' },
       { route: 'child-router',  moduleId: './child-router', nav: true, title:'Child Router' }
     ]);
-
+ 
     this.router = router;
   }
 }
