@@ -12,5 +12,5 @@ declare module 'aurelia-history-browser' {
     navigate(fragment?: string, options?: Object): boolean;
     navigateBack(): void;
   }
-  export function configure(aurelia: Object): void;
+  export function configure(config: Object): void;
 }

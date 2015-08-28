@@ -1,4 +1,6 @@
 declare module 'aurelia-logging' {
+  export interface Appender {
+  }
   
   /**
    * This library is part of the Aurelia platform and contains a minimal but effective logging mechanism
@@ -33,6 +35,10 @@ declare module 'aurelia-logging' {
    */
   export function getLogger(id: string): Logger;
   
+  // debug(logger : Logger, ...rest : any[]) : void;
+  // info(logger : Logger, ...rest : any[]) : void;
+  // warn(logger : Logger, ...rest : any[]) : void;
+  // error(logger : Logger, ...rest : any[]) : void;
   /**
    * Adds an appender capable of processing logs and channeling them to an output.
    *
@@ -40,7 +46,7 @@ declare module 'aurelia-logging' {
    * @param {Object} appender An appender instance to begin processing logs with.
    * @for export
    */
-  export function addAppender(appender: Object): void;
+  export function addAppender(appender: Appender): void;
   
   /**
    * Sets the level of the logging for the application loggers

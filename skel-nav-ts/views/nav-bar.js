@@ -16,7 +16,7 @@ define(["require", "exports", 'aurelia-framework'], function (require, exports, 
         }
         __decorate([
             aurelia_framework_1.bindable, 
-            __metadata('design:type', Object)
+            __metadata('design:type', )
         ], NavBar.prototype, "router");
         return NavBar;
     })();

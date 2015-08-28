@@ -1,5 +1,5 @@
 declare module 'aurelia-route-recognizer' {
-  import core from 'core-js';
+  import * as core from 'core-js';
   export interface RouteHandler {
     name: string;
   }
@@ -65,24 +65,24 @@ declare module 'aurelia-route-recognizer' {
   //  * `repeat`: true if the character specification can repeat
   export class StaticSegment {
     constructor(string: string);
-    eachChar(callback: ((spec: CharSpec) => void)): any;
+    eachChar(callback: ((spec: CharSpec) => void)): void;
     regex(): string;
     generate(params: Object, consumed: Object): string;
   }
   export class DynamicSegment {
     constructor(name: string);
-    eachChar(callback: ((spec: CharSpec) => void)): any;
+    eachChar(callback: ((spec: CharSpec) => void)): void;
     regex(): string;
     generate(params: Object, consumed: Object): string;
   }
   export class StarSegment {
     constructor(name: string);
-    eachChar(callback: ((spec: CharSpec) => void)): any;
+    eachChar(callback: ((spec: CharSpec) => void)): void;
     regex(): string;
     generate(params: Object, consumed: Object): string;
   }
   export class EpsilonSegment {
-    eachChar(callback: ((spec: CharSpec) => void)): any;
+    eachChar(callback: ((spec: CharSpec) => void)): void;
     regex(): string;
     generate(params: Object, consumed: Object): string;
   }
