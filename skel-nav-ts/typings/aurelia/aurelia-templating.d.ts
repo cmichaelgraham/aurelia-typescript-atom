@@ -351,7 +351,7 @@ declare module 'aurelia-templating' {
   export function resource(instance: any): any;
   export function behavior(override: any): any;
   export function customElement(name: any): any;
-  export function customAttribute(name: any, defaultBindingMode: any): any;
+  export function customAttribute(name: any, defaultBindingMode?: any): any;
   export function templateController(target: any): any;
   export function bindable(nameOrConfigOrTarget?: any, key?: any, descriptor?: any): any;
   export function dynamicOptions(target: any): any;

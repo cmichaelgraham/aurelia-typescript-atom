@@ -1,13 +1,6 @@
 declare module 'aurelia-fetch-client' {
   import 'core-js';
-
-  // added manully to fix compiler errors
-  interface Request {}
-  interface Response {}
-  interface URLSearchParams {}
-  interface Headers {}
-  interface BufferSource {}
-
+  
   /* eslint-disable */
   export interface Interceptor {
     request(request: Request): Request | Response | Promise<Request | Response>;
@@ -23,7 +16,7 @@ declare module 'aurelia-fetch-client' {
     credentials?: string;
     cache?: string;
   }
-
+  
   /**
   * Create a Blob containing JSON-serialized data.
   * Useful for easily creating JSON fetch request bodies.
@@ -31,19 +24,19 @@ declare module 'aurelia-fetch-client' {
   * @param body - The object to be serialized to JSON.
   */
   export function json(body: any): Blob;
-
+  
   /**
   * A class for configuring HttpClients.
   *
   * @constructor
   */
   export class HttpClientConfiguration {
-
+    
     /**
       * The base URL to be prepended to each Request's url before sending.
       */
     baseUrl: string;
-
+    
     /**
       * Default values to apply to init objects when creating Requests. Note that
       * defaults cannot be applied when Request objects are manually created because
@@ -51,12 +44,12 @@ declare module 'aurelia-fetch-client' {
       * See also https://developer.mozilla.org/en-US/docs/Web/API/Request/Request
       */
     defaults: RequestInit;
-
+    
     /**
       * Interceptors to be added to the HttpClient.
       */
     interceptors: Interceptor[];
-
+    
     /**
       * Sets the baseUrl.
       *
@@ -64,7 +57,7 @@ declare module 'aurelia-fetch-client' {
       * @chainable
       */
     withBaseUrl(baseUrl: string): HttpClientConfiguration;
-
+    
     /**
       * Sets the defaults.
       *
@@ -72,7 +65,7 @@ declare module 'aurelia-fetch-client' {
       * @chainable
       */
     withDefaults(defaults: RequestInit): HttpClientConfiguration;
-
+    
     /**
       * Adds an interceptor to be run on all requests or responses.
       *
@@ -84,7 +77,7 @@ declare module 'aurelia-fetch-client' {
       * @chainable
       */
     withInterceptor(interceptor: Interceptor): HttpClientConfiguration;
-
+    
     /**
       * Applies a configuration that addresses common application needs, including
       * configuring same-origin credentials, and using rejectErrorResponses.
@@ -92,7 +85,7 @@ declare module 'aurelia-fetch-client' {
       * @chainable
       */
     useStandardConfiguration(): HttpClientConfiguration;
-
+    
     /**
       * Causes Responses whose status codes fall outside the range 200-299 to reject.
       * The fetch API only rejects on network errors or other conditions that prevent
@@ -105,7 +98,7 @@ declare module 'aurelia-fetch-client' {
       */
     rejectErrorResponses(): HttpClientConfiguration;
   }
-
+  
   /**
   * An HTTP client based on the Fetch API.
   *
@@ -118,7 +111,7 @@ declare module 'aurelia-fetch-client' {
     isConfigured: boolean;
     baseUrl: string;
     defaults: RequestInit;
-
+    
     /**
       * Configure this client with default settings to be used by all requests.
       *
@@ -127,7 +120,7 @@ declare module 'aurelia-fetch-client' {
       * @chainable
       */
     configure(config: string | RequestInit | ((config: HttpClientConfiguration) => void)): HttpClient;
-
+    
     /**
       * Starts the process of fetching a resource. Default configuration parameters
       * will be applied to the Request. The constructed Request will be passed to

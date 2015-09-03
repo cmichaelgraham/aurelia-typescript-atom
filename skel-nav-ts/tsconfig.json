@@ -48,6 +48,7 @@
         "./typings/esri/esri.d.ts",
         "./typings/nprogress.d.ts",
         "./typings/reflect-metadata.d.ts",
+        "./typings/whatwg-fetch/whatwg-fetch.d.ts",
         "./views/animation-main.ts",
         "./views/app.ts",
         "./views/child-router.ts",
