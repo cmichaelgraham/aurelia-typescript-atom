@@ -5466,6 +5466,7 @@ define('aurelia-loader-default',['exports', 'aurelia-loader', 'aurelia-metadata'
 
       _Loader.call(this);
 
+      this.textPluginName = 'text';
       this.moduleRegistry = {};
       this.useHTMLImportsLoader();
 
@@ -5524,7 +5525,7 @@ define('aurelia-loader-default',['exports', 'aurelia-loader', 'aurelia-metadata'
     };
 
     DefaultLoader.prototype.loadText = function loadText(url) {
-      return System['import'](this.applyPluginToUrl(url, 'text'));
+      return System['import'](this.applyPluginToUrl(url, this.textPluginName));
     };
 
     DefaultLoader.prototype.applyPluginToUrl = function applyPluginToUrl(url, pluginName) {

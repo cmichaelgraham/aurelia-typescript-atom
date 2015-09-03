@@ -1,16 +1,16 @@
 declare module 'aurelia-animator-css' {
   import { animationEvent, Animator }  from 'aurelia-templating';
-  interface CssAnimation {
+  export interface CssAnimation {
     className: string;
     element: HTMLElement;
   }
-
+  
   /**
    * Aurelia animator implementation using CSS3-Animations
    */
   export class CssAnimator {
     constructor();
-
+    
     /* Public API Begin */
     /**
        * Run an animation for the given element/elements with the specified className in parallel
@@ -20,7 +20,7 @@ declare module 'aurelia-animator-css' {
        * @returns
        */
     animate(element: HTMLElement | Array<HTMLElement>, className: string): Promise<boolean>;
-
+    
     /**
        * Runs a series of animations in sequence
        *
@@ -28,14 +28,14 @@ declare module 'aurelia-animator-css' {
        * @returns
        */
     runSequence(animations: Array<CssAnimation>): Promise<boolean>;
-
+    
     /**
        * Stub of move interface method
        *
        * @returns
        */
     move(): Promise<boolean>;
-
+    
     /**
        * Performs the enter animation for the given element, triggered by a [my-class]-enter-active css-class
        *
@@ -44,7 +44,7 @@ declare module 'aurelia-animator-css' {
        * @returns
        */
     enter(element: HTMLElement): Promise<boolean>;
-
+    
     /**
        * Performs the leave animation for the given element, triggered by a [my-class]-leave-active css-class
        *
@@ -53,7 +53,7 @@ declare module 'aurelia-animator-css' {
        * @returns
        */
     leave(element: HTMLElement): Promise<boolean>;
-
+    
     /**
        * Executes an animation by removing a css-class
        *
@@ -64,7 +64,7 @@ declare module 'aurelia-animator-css' {
        * @returns
        */
     removeClass(element: HTMLElement, className: string, suppressEvents?: boolean): Promise<boolean>;
-
+    
     /**
        * Executes an animation by adding a css-class
        *
@@ -76,7 +76,7 @@ declare module 'aurelia-animator-css' {
        */
     addClass(element: HTMLElement, className: string, suppressEvents?: boolean): Promise<boolean>;
   }
-
+  
   /* Public API End */
   export function configure(config: Object, callback?: ((animator: CssAnimator) => void)): any;
 }
