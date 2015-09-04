@@ -52,6 +52,7 @@
         "./typings/whatwg-fetch/whatwg-fetch.d.ts",
         "./views/animation-main.ts",
         "./views/app.ts",
+        "./views/blur-image.ts",
         "./views/child-router.ts",
         "./views/esri-map.ts",
         "./views/flickr.ts",
